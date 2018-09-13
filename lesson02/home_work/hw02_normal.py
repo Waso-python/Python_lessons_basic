@@ -27,13 +27,10 @@ print("{} {} {} года".format(a[int(d[0]+d[1])],b[int(d[3]+d[4])],(d[6]+d[7]+
 # в диапазоне от -100 до 100. В списке должно быть n - элементов.
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
-
+a = list()
 n = int(input('Введите количество элементов'))
-i = 0
-a = []
-while i < n:
+for i in range(n):
     a.append(random.randint(-100,100))
-    i+=1
 print(a)
 
 
@@ -48,8 +45,16 @@ lst = []
 N = 8
 i = 0
 while i < N:
-    lst.append(random.randint(0,3))
+    lst.append(random.randint(0,9))
     i+=1
 lst2 = set(lst)
 print(lst)
 print(lst2)
+
+
+lst3 = list()
+for s in lst:
+    if lst.count(s) == 1:
+        lst3.append(s)
+print(lst3)
+

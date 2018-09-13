@@ -13,8 +13,8 @@ import random
 # 3.   киви
 # 4.  арбуз
 a = ["яблоко", "банан", "киви", "арбуз"]
-for s in a:
-    print("{:>}".format(s))
+for i,s in enumerate(a):
+    print("{}. {:>10}".format(i,s))
 # Подсказка: воспользоваться методом .format()
 
 
