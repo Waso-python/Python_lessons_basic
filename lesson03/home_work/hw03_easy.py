@@ -6,7 +6,7 @@
 
 
 def my_round(n, nd):
-    s = round(n,nd)
+    s = float("{0:.{nd}f}".format(n,nd=nd))
     return s
 
 
@@ -22,9 +22,21 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
-
-
+    repr_tic_num = repr(ticket_number)
+    if len(repr_tic_num) == 6:
+        left = repr_tic_num[:3]
+        right = repr_tic_num[-3:]
+        def sum_side(side):
+            s = 0
+            for i in side:
+                s+=int(i)
+            return s
+        if sum_side(left)== sum_side(right):
+            return "true"
+        else:
+            return "false"
+    else:
+        return "Билет не шестизначный"
 print(lucky_ticket(123006))
 print(lucky_ticket(12321))
 print(lucky_ticket(436751))
